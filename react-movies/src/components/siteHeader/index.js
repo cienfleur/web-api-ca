@@ -31,6 +31,7 @@ const SiteHeader = ({ history }) => {
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Top", path: "movies/popular" },
     { label: "actors", path: "/actors/popular" },
+    { label: "Login", path: "/auth "}
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -60,9 +61,6 @@ const SiteHeader = ({ history }) => {
           <Typography variant="h4" sx={{ flexGrow: 1 }}>
             TMDB Client
           </Typography>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            All you ever wanted to know about Movies!
-          </Typography>
           <div className="search">
             <TextField
               id="outlined-basic"
@@ -79,6 +77,9 @@ const SiteHeader = ({ history }) => {
               fullWidth
             />
           </div>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            All you ever wanted to know about Movies!
+          </Typography>
             {isMobile ? (
               <>
                 <IconButton

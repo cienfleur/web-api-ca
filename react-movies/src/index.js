@@ -18,6 +18,7 @@ import ActorPopularPage from './pages/actorPopularPage';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Switch from '@mui/material/Switch';
+import AuthPage from './pages/authPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -72,6 +73,7 @@ const App = () => {
             <Route path="/search/:id" element={ <SearchPage /> } />
             <Route path="/actors/:id" element={ <ActorPage /> } />
             <Route path="/actors/popular" element={ <ActorPopularPage /> } />
+            <Route path="/auth" element={ <AuthPage /> } />
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>
