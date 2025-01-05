@@ -49,4 +49,10 @@ const pwdValidator = (password) => {
     return this.save();
   };
 
+  // list all favorite movies of a user
+  UserSchema.methods.getFavoriteMovies = function () {
+    return this.favorite_movies;
+  };
+  
+
 export default mongoose.model('User', UserSchema);

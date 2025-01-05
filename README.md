@@ -49,3 +49,6 @@ Basic login and registration supported on the website. All routes besides homepa
 
 React app is fully integrated with the web API, all calls previously made directly to the TMDB API are now sent through the web API, which communicates with TMDB and MongoDB.
 
+## Issues
+
+Parameterized endpoints, namely the one to return movie details and search for movies, do not function when using the frontend interface. However, requests made directly to the API function as normal, as seen in the demonstration video.
