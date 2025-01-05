@@ -21,6 +21,7 @@ import AuthContextProvider from './contexts/authContext';
 import ProtectedRoutes from "./protectedRoutes";
 import SiteHeader from "./components/siteHeader";
 import LogInPage from './pages/logInPage';
+import SignUpPage from './pages/signUpPage';
 import ProfilePage from './pages/profilePage';
 
 const queryClient = new QueryClient({
@@ -67,6 +68,7 @@ const App = () => {
           <AuthContextProvider>
           <Routes>
           <Route path="/login" element={ <LogInPage /> } />
+          <Route path="/signup" element={ <SignUpPage /> } />
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={ <Navigate to="/" /> } />
           <Route element={<ProtectedRoutes />}>
