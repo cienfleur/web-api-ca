@@ -1,19 +1,15 @@
 # Assignment 2 - Web API.
 
-Name: Your Name
+Student ID: 20102083
 
 ## Features.
 
-A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** (or modifications to existing features)
- 
- + Feature 1 
- + Feature 2 
- + Feature 3 
- + etc
+Additional features not covered in the original specification:
+- Additional MongoDB collection for actors
 
 ## Setup requirements.
 
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
+This web app requires a TMDB API key and MongoDB environment set up before it can successfully be run. 
 
 ## API Configuration
 
@@ -21,33 +17,36 @@ Describe any configuration that needs to take place before running the API. For 
 
 REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON GITHUB, just placeholders as indicated below:
 
-______________________
-NODEENV=development
+After cloning this repository, in order to successfully run the web app, create a `.env` file in both the `react-movies` and `movies-api` folders, and put the following variables into each file respectively:
+```
+REACT_APP_TMDB_KEY=...YOUR KEY HERE...
+FAST_REFRESH=false
+```
+```
+NODE_ENV=development
 PORT=8080
-HOST=
-mongoDB=YourMongoURL
-seedDb=true
-secret=YourJWTSecret
-______________________
+HOST=localhost
+MONGO_DB=...LINK TO YOUR MONGO INSTANCE HERE...
+TMDB_KEY=...YOUR KEY HERE...
+SECRET=...YOUR JWT SECRET HERE...
+```
 
 ## API Design
-Give an overview of your web API design, perhaps similar to the following: 
+API endpoints present in the app:
 
 - /api/movies | GET | Gets a list of movies 
 - /api/movies/{movieid} | GET | Gets a single movie 
 - /api/movies/{movieid}/reviews | GET | Get all reviews for movie 
-- /api/movies/{movieid}/reviews | POST | Create a new review for Movie 
-
-If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
-
+- /api/movies/{movieid}/reviews | POST | Create a new review for Movie
+- /api/actors | GET | Gets a list of actors 
+- /api/users/?action=authenticate | POST | Allow user to authenticate their profile
+- /api/users/?action=register | POST | Allow user to register an account on the web app
+- /api/users | POST | if authenticated, returns the user's token, used for protected routes
 ## Security and Authentication
 
-Give details of authentication/security implemented on the API (e.g. passport/sessions). Indicate which routes are protected.
+Basic login and registration supported on the website. All routes besides homepage now protected, trying to browse the site requires you to log in or make an account first. Use of JWT tokens to facilitate authentication.
 
 ## Integrating with React App
 
-Describe how you integrated your React app with the API. List the views that use your Web API instead of the TMDB API. Describe any other updates to the React app from Assignment One.
+React app is fully integrated with the web API, all calls previously made directly to the TMDB API are now sent through the web API, which communicates with TMDB and MongoDB.
 
-## Independent learning (if relevant)
-
-Briefly explain any non-standard features developed for the app.
