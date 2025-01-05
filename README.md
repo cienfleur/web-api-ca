@@ -36,9 +36,8 @@ API endpoints present in the app:
 
 - /api/movies | GET | Gets a list of movies 
 - /api/movies/{movieid} | GET | Gets a single movie 
-- /api/movies/{movieid}/reviews | GET | Get all reviews for movie 
-- /api/movies/{movieid}/reviews | POST | Create a new review for Movie
 - /api/actors | GET | Gets a list of actors 
+- /api/actors/{actorid} | GET | Gets a single actor
 - /api/users/?action=authenticate | POST | Allow user to authenticate their profile
 - /api/users/?action=register | POST | Allow user to register an account on the web app
 - /api/users | POST | if authenticated, returns the user's token, used for protected routes

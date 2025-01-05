@@ -19,3 +19,13 @@ export const signup = async (username, password) => {
     });
     return response.json();
 };
+
+export const getMovies = async () => {
+    const response = await fetch('http://localhost:8080/api/movies/tmdb/upcoming', {
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        },
+        method: 'get'
+    });
+    return response.json();
+  };

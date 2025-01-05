@@ -50,4 +50,14 @@ router.get('/tmdb/genres', asyncHandler(async (req, res) => {
     res.status(200).json(movieGenres);
 }))
 
+router.get('/favorites', asyncHandler(async (req, res) => {
+    const id = parseInt(req.params.id);
+    const favoriteMovies = await movieModel.findByMovieDBId(req.user.favorite_movies);
+    if (movie) {
+        res.status(200).json(favoriteMovies);
+    } else {
+        res.status(404).json({message: 'No favorite movies present', status_code: 404});
+    }
+}));
+
 export default router;

@@ -7,7 +7,8 @@ const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
 const UserSchema = new Schema({
   username: { type: String, unique: true, required: true},
-  password: {type: String, required: true }
+  password: {type: String, required: true },
+  favorite_movies: {type: [Number], unique: true, required: false}
 });
 
 const pwdValidator = (password) => {
@@ -39,5 +40,13 @@ const pwdValidator = (password) => {
         next();
     }
   });
+
+  // list user's favorite movies
+  UserSchema.methods.addFavorite = function (movieId) {
+    if (this.favorite_movies.indexOf(movieId) === -1) {
+      this.favorite_movies.push(movieId);
+    }
+    return this.save();
+  };
 
 export default mongoose.model('User', UserSchema);
