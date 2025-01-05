@@ -4,8 +4,8 @@ Student ID: 20102083
 
 ## Features.
 
-Additional features not covered in the original specification:
-- Additional MongoDB collection for actors
+- Previously used routes are now directed through the Movies API
+- Actors tab using the /actors endpoint of the TMDB API
 
 ## Setup requirements.
 
