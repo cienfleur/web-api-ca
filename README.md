@@ -9,13 +9,9 @@ Student ID: 20102083
 
 ## Setup requirements.
 
-This web app requires a TMDB API key and MongoDB environment set up before it can successfully be run. 
+This web app requires a TMDB API key and MongoDB environment set up before it can successfully be run. Your TMDB API key can be found at [this link](https://www.themoviedb.org/settings/api). MongoDB can be found at [this link](https://www.mongodb.com/).
 
 ## API Configuration
-
-Describe any configuration that needs to take place before running the API. For example, creating an `.env` file and what variables to put in it. Give an example of how this might be done.
-
-REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON GITHUB, just placeholders as indicated below:
 
 After cloning this repository, in order to successfully run the web app, create a `.env` file in both the `react-movies` and `movies-api` folders, and put the following variables into each file respectively:
 ```
